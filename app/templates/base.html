@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    {% block head %} {% endblock %}
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <!-- {% if current_user.is_authenticated %}
+        <p hidden id="user_id">{{ current_user.id }}</p>
+    {% endif %} -->
+    <header>
+        <nav>
+            <a href="" style="color: #FFF;
+            text-align: center; 
+            font-family: Arial;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-decoration: none;">Хранители</a>
+            <ul class="navbar">
+                <li style="width: 140px;" class="partOfMenu"><a href="{{ url_for('index') }}">Главная</a></li>
+                <li style="width: 140px;" class="partOfMenu"><a href="{{ url_for('index') }}">Форум</a></li>
+                <li class="list educ" style="width: 252px;">
+                    <a href="{{ url_for('docs') }}" class="educationAll"><p>Обучение</p></a>
+                    <ul class="submenu">
+                        <div class="partOfSubmenu sbmEduc">
+                            <li class="partsOfSubmenu">
+                                <a href="{{ url_for('documents') }}"><p class="textOfSubmenu">Теоретический материал</p></a>
+                            </li>
+                            <li class="partsOfSubmenu">
+                                <a href="{{ url_for('games_and_methodics') }}"><p class="textOfSubmenu">Тестовые материалы</p></a>
+                            </li>
+                            <div style="width: 25px; height: 25px;"></div>
+                        </div>
+                    </ul>
+                </li>
+                <li class="list docs" style="width: 252px;">
+                    <a href="{{ url_for('docs') }}" class="documentsAll"><p>Документация</p></a>
+                    <ul class="submenu">
+                        <div class="partOfSubmenu sbmDocs">
+                            <li class="partsOfSubmenu">
+                                <a href="{{ url_for('documents') }}"><p class="textOfSubmenu">Нормативно-правовая документация</p></a>
+                            </li>
+                            <li class="partsOfSubmenu">
+                                <a href="{{ url_for('games_and_methodics') }}"><p class="textOfSubmenu">Шаблоны для авторских разработок</p></a>
+                            </li>
+                            <div style="width: 25px; height: 10px;"></div>
+                        </div>
+                    </ul>
+                </li>
+                <li style="width: 128px;" class="partOfMenu"><a href="{{ url_for('login') }}">Войти</a></li>
+                <!-- {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('logout') }}">{{ current_user.name }}</a></li>
+                {% else %} -->
+                <!-- {% endif %} -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <!-- <aside style="height: auto;">
+            {% if current_user.is_authenticated %}
+                <h2>{{ current_user.name }}</h2>
+                <h2>Чат общего обсуждения</h2>
+                <div class="chat">
+                    {% set data = get('https://gol-peresvet-376-edu.glitch.me/api/data').json() %}
+                    {% for message in data.messages %}
+                        {% for user in data.users %}
+                            {% for k, v in user.items() %}
+                                {% if message.user_id == v %}
+                                    <div class="message">
+                                        <h3>{{ k }}</h3>
+                                        <p>{{ message.text }}</p>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <form action="" class="send_message" method="post">
+                    <input type="text" name="" id="text" class="send">
+                    <button type="button" id="button"><img src="../static/img/index/arrow.png" alt="" style="height: 30px; width: 30px; margin: 0"></button>
+                </form>
+            {% else %}
+                <h1>Чтобы подключиться к общему обсуждению необходимо сначала войти на сайт.</h1>
+            {% endif %}
+        </aside> -->
+        <main>
+            {% block content %}
+
+            {% endblock %}
+        </main>
+    </div>
+
+    <!-- <footer>
+        
+    </footer> -->
+    <!-- {% if current_user.is_authenticated %}
+        <script>
+            let button = document.querySelector('#button');
+            socket = io()
+            socket.connect('https://gol-peresvet-376-edu.glitch.me/')
+            button.addEventListener('click', function() {
+                let text = document.querySelector('#text');
+                let user_id = document.querySelector('#user_id').textContent;
+                let text_message = text.value
+                text.value = ''
+                let msg = {
+                    'text': text_message,
+                    'user_id': user_id
+                }
+                console.log(msg)
+                socket.send(msg)
+            })
+            socket.on('my responce', function(msg) {
+                let chat = document.querySelector('.chat');
+                chat.insertAdjacentHTML('afterbegin', `<div class="message"><h3>${msg.user}</h3><p>${msg.text}</p></div>`)
+            })
+        </script>
+    {% endif %} -->
+    <script>
+        const sbmEduc = document.querySelector(".sbmEduc");
+        const sbmDocs = document.querySelector(".sbmDocs");
+        const educationAll = document.querySelector(".educationAll");
+        const documentsAll = document.querySelector(".documentsAll");
+        const educ = document.querySelector(".educ");
+        const docs = document.querySelector(".docs");
+        
+        educationAll.addEventListener("mouseenter", () => {
+            sbmEduc.classList.remove("partOfSubmenu")
+            educationAll.classList.add("forMenu")
+            sbmEduc.classList.add("partOfSubmenuHover")
+        })
+
+        documentsAll.addEventListener("mouseenter", () => {
+            sbmDocs.classList.remove("partOfSubmenu")
+            sbmDocs.classList.remove("sbmDocs")
+            documentsAll.classList.add("forMenu")
+            sbmDocs.classList.add("partOfSubmenuHover")
+            sbmDocs.classList.add("sbmDocsHover")
+        })
+
+        educ.addEventListener("mouseleave", () => {
+            sbmEduc.classList.remove("partOfSubmenuHover")
+            sbmEduc.classList.add("partOfSubmenu")
+            educationAll.classList.remove("forMenu")
+        })
+
+        docs.addEventListener("mouseleave", () => {
+            sbmDocs.classList.remove("partOfSubmenuHover")
+            sbmDocs.classList.add("partOfSubmenu")
+            sbmDocs.classList.remove("sbmDocsHover")
+            sbmDocs.classList.add("sbmDocs")
+            documentsAll.classList.remove("forMenu")
+        })
+    </script>
+
+    {% block script %}
+
+    {% endblock %}
+</body>
+</html>

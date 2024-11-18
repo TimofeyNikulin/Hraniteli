@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(86, 128, 233, 0.20) 0%, rgba(136, 96, 208, 0.20) 100%), linear-gradient(58deg, #84CEEB -15.34%, #C1C8E4 113.61%);
+    width: auto;
+    height: 1024px;
+}
+
+nav {
+    background: linear-gradient(90deg, rgba(0, 41, 255, 0.08) 0%, rgba(0, 41, 255, 0.00) 44.9%);
+    height: 84px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+li > a {
+    color: #FFF;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+li {
+    height: 54px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.partOfMenu {
+    box-shadow: inset -140px 0px 70px -70px #84ceeb00;
+    background-color: #8760d000;
+    margin: 0px;
+    transition: all 0.5s;
+}
+
+.partOfMenu:hover {
+    box-shadow: inset -140px 0px 140px -90px #84CEEB;
+    background-color: #8860D0;
+    margin: 0 15px 0 15px;
+    transition: all 0.5s;
+}
+
+.list {
+    display: block;
+    z-index: 1;
+}
+
+.documentsAll {
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset -140px 0px 70px -70px #84ceeb00;
+    background-color: #8760d000;
+    margin: 0px;
+    transition: all 0.5s;
+}
+
+.educationAll {
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset -140px 0px 70px -70px #84ceeb00;
+    background-color: #8760d000;
+    margin: 0px;
+    transition: all 0.5s;
+}
+
+.documentsAll:hover {
+    box-shadow: inset 0px 0px 70px -70px #84CEEB;
+    background-color: #8860D0;
+    margin: 0 15px 0 0;
+    transition: all 0.5s;
+}
+
+.submenu {
+    padding-inline-start: 0px;
+    height: 134px;
+    overflow: hidden;
+}
+
+.partOfSubmenu {
+    background: linear-gradient(270deg, #84CEEB -37.3%, #8860D0 140.08%);
+    margin-top: -134px;
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 25px 25px;
+    width: 252px;
+    height: 134px;
+    justify-content: space-around;
+}
+
+.sbmDocs {
+    margin-top: -182px;
+    height: 182px;
+}
+
+.sbmDocsHover {
+    margin-top: 0px;
+    transition: all 1s;
+}
+
+.forMenu {
+    border-radius: 25px 25px 0 0;
+    background: linear-gradient(270deg, #84CEEB -37.3%, #8860D0 140.08%);
+}
+
+.partOfSubmenuHover {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    background: linear-gradient(270deg, #84CEEB -37.3%, #8860D0 140.08%);
+    border-radius: 0 0 25px 25px;
+    width: 252px;
+    height: 134px;
+    justify-content: space-around;
+    transition: all 1s;
+}
+
+.textOfSubmenu {
+    color: #FFF;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 0 10px 0 10px;
+}
+
+.partsOfSubmenu:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+}
+
+.partsOfSubmenu {
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.5s;
+}
