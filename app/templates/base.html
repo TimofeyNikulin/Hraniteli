@@ -16,7 +16,7 @@
     {% endif %} -->
     <header>
         <nav>
-            <a href="" style="color: #FFF;
+            <a href="{{ url_for('index') }}" style="color: #FFF;
             text-align: center; 
             font-family: Arial;
             font-size: 48px;
@@ -35,7 +35,7 @@
                                 <a href="{{ url_for('documents') }}"><p class="textOfSubmenu">Теоретический материал</p></a>
                             </li>
                             <li class="partsOfSubmenu">
-                                <a href="{{ url_for('games_and_methodics') }}"><p class="textOfSubmenu">Тестовые материалы</p></a>
+                                <a href=""><p class="textOfSubmenu">Тестовые материалы</p></a>
                             </li>
                             <div style="width: 25px; height: 25px;"></div>
                         </div>
@@ -49,13 +49,13 @@
                                 <a href="{{ url_for('documents') }}"><p class="textOfSubmenu">Нормативно-правовая документация</p></a>
                             </li>
                             <li class="partsOfSubmenu">
-                                <a href="{{ url_for('games_and_methodics') }}"><p class="textOfSubmenu">Шаблоны для авторских разработок</p></a>
+                                <a href="{{ url_for('templates') }}"><p class="textOfSubmenu">Шаблоны для авторских разработок</p></a>
                             </li>
                             <div style="width: 25px; height: 10px;"></div>
                         </div>
                     </ul>
                 </li>
-                <li style="width: 128px;" class="partOfMenu"><a href="{{ url_for('login') }}">Войти</a></li>
+                <li style="width: 128px;" class="partOfMenu enter"><a href="{{ url_for('login') }}">Войти</a></li>
                 <!-- {% if current_user.is_authenticated %}
                     <li><a href="{{ url_for('logout') }}">{{ current_user.name }}</a></li>
                 {% else %} -->

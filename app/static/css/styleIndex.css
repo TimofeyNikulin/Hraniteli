@@ -1,11 +1,11 @@
 body {
-    height: 4056px;
+    height: 3856px;
 }
 
 .menu {
     position: relative;
-    margin-top: 120px;
-    margin-left: 650px;
+    width: 600px;
+    height: 600px;
 }
 
 .elipse1 {
@@ -52,14 +52,14 @@ body {
 }
 
 .elipseText1 {
-    width: 200px;
+    width: 190px;
     position: absolute;
     bottom: 200px;
     left: 60px;
     color: #FFF;
     text-align: right;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 48px;
+    font-size: 45px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -75,7 +75,7 @@ body {
     color: #FFF;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 48px;
+    font-size: 45px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -99,15 +99,10 @@ body {
 
 .leftSide {
     width: 100%;
-}
-
-/* .rightSide {
-    width: 50%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-} */
+}
 
 .firstPart {
     display: flex;
@@ -199,40 +194,55 @@ body {
     display: flex;
     width: 740px;
     height: 545px;
-    background: linear-gradient(90deg, rgba(134, 3, 3, 0.75) 0%, rgba(25, 0, 175, 0.75) 100%);
     font-size: 40px;
     overflow: hidden;
     border-radius: 36px;
 }
 
+.secondRoller {
+    display: flex;
+    width: 740px;
+    height: 590px;
+    font-size: 40px;
+    overflow: hidden;
+    border-radius: 36px;
+    padding-right: 50px;
+}
+
 .card1 {
     margin-top: 26px;
     margin-left: 25px;
-    position: absolute;
     width: 692px;
     height: 497px;
     border-radius: 36px;
-    background: linear-gradient(90deg, rgb(134, 3, 3) 0%, rgb(25, 0, 175) 100%);
+    background: linear-gradient(90deg, rgba(134, 3, 3, 0.6) 0%, rgba(25, 0, 175, 0.6) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: 3s ease-in 1s infinite reverse both running slidein;
 }
 
-.firstRoller > .firstCard {
-    z-index: 1000;
+.card2 {
+    margin-top: 26px;
+    margin-left: 25px;
+    width: 692px;
+    height: 497px;
+    border-radius: 36px;
+    background: linear-gradient(90deg, rgba(147, 96, 255, 0.6) 0%, rgba(132, 206, 235, 0.6) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.firstRoller > .secondCard {
-    z-index: 999;
+.card1 > p {
+    margin-left: 25px;
 }
 
-.firstRoller > .thirdCard {
-    z-index: 998;
+.card2 > p {
+    margin-left: 40px;
 }
 
-.firstRoller > .fourthCard {
-    z-index: 997;
+.noneCard {
+    display: none;
 }
 
 .top {
@@ -259,14 +269,13 @@ body {
     overflow: hidden;
 }
 
-.front2 {
+.front {
     height: 964px;
     width: 100%;
     position: absolute;
     background: rgba(147, 96, 255, 0.60);
     z-index: 0;
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
     color: #FFF;
     text-align: left;
@@ -276,18 +285,11 @@ body {
     font-weight: bold;
     line-height: normal;
     overflow: hidden;
+    align-items: center;
 }
 
 .backImage2 {
     margin-top: -450px;
-}
-
-.card2 {
-    border-radius: 36px;
-    background: linear-gradient(90deg, rgba(147, 96, 255, 0.70) 0%, rgba(132, 206, 235, 0.70) 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .front2 .firstCard {
@@ -374,16 +376,19 @@ body {
 .card3 {
     height: 55px;
     border-radius: 15px;
-    background: rgba(132, 206, 235, 0.60);
+    background: rgba(255, 77, 0, 0.60);
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .front3 .thirdCard {
-    margin-top: 160px;
+    margin-top: 200px;
+    margin-left: 50px;
     width: 454px;
     height: 350px;
     display: flex;
@@ -471,4 +476,43 @@ a {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+.left3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.arrow {
+    width: 43.5px;
+    height: 37px;
+    position: absolute;
+    top: 70%;
+    left: 86%;
+    rotate: 180deg;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 0;
+    transition: all 0.5s;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.205);
+    margin-left: 10px;
+    transition: all 0.5s;
+}
+
+.right3 {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 375px 375px;
+    grid-template-rows: 25% 25% 25% 25%;
+}
+
+.arr2 {
+    top: 68%;
+    left: 86%;
 }

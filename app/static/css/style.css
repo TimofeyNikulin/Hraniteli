@@ -57,6 +57,13 @@ li {
     transition: all 0.5s;
 }
 
+.enter {
+    box-shadow: inset -140px 0px 70px -70px #84ceeb75;
+    background-color: #8760d075;
+    margin: 0px;
+    transition: all 0.5s;
+}
+
 .list {
     display: block;
     z-index: 1;

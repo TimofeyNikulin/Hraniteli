@@ -5,37 +5,68 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Для отряда «________________________» ___________ возрастной группы</h1>
-    <h1>Этап плана Описание деятельности коллектива</h1>
-    <hr>
-    <ol>
-        <li><p>Стартовая беседа вожатого</p></li>
-        <li><p>Коллективное планирование.</p>
-            <ol>
-                <li><p>Обсуждение цели.</p></li>
-                <li><p>Обсуждение формы проведения.</p></li>
-                <li><p>Выбор Совета дела.</p></li>
-                <li><p>Выбор творческих групп.</p></li>
-                <li><p>Описание:</p> 
-                    <ul>
-                        <li><p>содержания</p></li>
-                        <li><p>необходимого оборудования и материалов</p></li>
-                        <li><p>согласования с необходимыми людьми</p></li>
-                        <li><p>результата и при необходимости</p></li>
-                        <li><p>жюри, критериев судейства, поощрения победителей</p></li>
-                        <li><p>работы со СМИ Организации</p></li>
-                    </ul>
-                </li>
-            </ol>
-        </li>
-        
-                
-        <li><p>Коллективная подготовка (описание алгоритма работы каждого
-            подразделения Совета дела)</p></li>
-        <li><p>Проведение КТД (описание плана проведения КТД с указанием
-            временных рамок)</p></li>
-        <li><p>Коллективный анализ (описание формы анализа)</p></li>
-        <li><p>Последействие (описание использования полученного опыта в
-            перспективной деятельности отряда)</p></li>
-    </ol>
+    <div class="mainTemp">
+        <div class="template tmp1">
+            <a href="../../static/files/Шаблон_КТД.docx" download="" class="card">
+                <div>
+                    <img src="../../static/img/docs/ktd.png" alt="">
+                    <div class="download">
+                        <img src="../../static/img/docs/download.png" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="template tmp2">
+            <a href="../../static/files/Шаблон_Плана_игр.docx" download="" class="card">
+                <div>
+                    <img src="../../static/img/docs/planigry.png" alt="">
+                    <div class="download">
+                        <img src="../../static/img/docs/download.png" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <h1>Шаблон КТД</h1>
+        <h1>Шаблон плана игр</h1>
+        <div class="template tmp3">
+            <a href="../../static/files/Шаблон_Игры.docx" download="" class="card">
+                <div>
+                    <img src="../../static/img/docs/igra.png" alt="">
+                    <div class="download">
+                        <img src="../../static/img/docs/download.png" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="template tmp4">
+            <a href="../../static/files/Шаблон_мероприятия.docx" download="" class="card">
+                <div>
+                    <img src="../../static/img/docs/mero.png" alt="">
+                    <div class="download">
+                        <img src="../../static/img/docs/download.png" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <h1>Шаблон игры</h1>
+        <h1>Шаблон мероприятия</h1>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        const cards = document.querySelectorAll(".card");
+        const downloads = document.querySelectorAll(".download");
+
+        for (let i = 0; i != cards.length; i++) {
+            cards[i].addEventListener(("mouseenter"), () => {
+                    downloads[i].classList.add("downloadHover");
+                }
+            )
+            cards[i].addEventListener(("mouseleave"), () => {
+                    downloads[i].classList.remove("downloadHover");
+                } 
+            )
+        }
+    </script>
 {% endblock %}
