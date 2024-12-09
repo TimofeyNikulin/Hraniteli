@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="../../static/css/styleForum.css">
+{% endblock %}
+
+{% block content %}
+    <aside>
+        <div class="sidebar">
+            <div class="view partOfSidebar">
+                <div class="titleOfPart"><img src="../../static/img/educ/accArrow.png" alt=""><h2>Вид деятельности</h2></div>
+                <div class="check viewCheck noneDisplay"><input type="checkbox" name="game" id="game"><label for="game">Игры</label></div>
+                <div class="check viewCheck noneDisplay"><input type="checkbox" name="ktd" id="ktd"><label for="ktd">КТД</label></div>
+                <div class="check viewCheck noneDisplay"><input type="checkbox" name="event" id="event"><label for="event">Мероприятия</label></div>
+                <div class="check viewCheck noneDisplay"><input type="checkbox" name="candle" id="candle"><label for="candle">Огоньки</label></div>
+            </div>
+            <div class="period partOfSidebar">
+                <div class="titleOfPart"><img src="../../static/img/educ/accArrow.png" alt=""><h2>Период смены</h2></div>
+                <div class="check periodCheck noneDisplay"><input type="checkbox" name="org" id="org"><label for="org">Организационный</label></div>
+                <div class="check periodCheck noneDisplay"><input type="checkbox" name="main" id="main"><label for="main">Основной</label></div>
+                <div class="check periodCheck noneDisplay"><input type="checkbox" name="end" id="end"><label for="end">Заключительный</label></div>
+            </div>
+            <div class="age partOfSidebar">
+                <div class="titleOfPart"><img src="../../static/img/educ/accArrow.png" alt=""><h2>Возраст детей</h2></div>
+                <div class="check ageCheck noneDisplay"><input type="checkbox" name="junior" id="junior"><label for="junior">Младшие</label></div>
+                <div class="check ageCheck noneDisplay"><input type="checkbox" name="middle" id="middle"><label for="middle">Средние</label></div>
+                <div class="check ageCheck noneDisplay"><input type="checkbox" name="senior" id="senior"><label for="senior">Старшие</label></div>
+            </div>
+            <div class="inventory partOfSidebar">
+                <div class="titleOfPart"><img src="../../static/img/educ/accArrow.png" alt=""><h2>Необходимость в оборудовании</h2></div>
+                <div class="check inventoryCheck noneDisplay"><input type="radio" name="trueOrFalse" id="true"><label for="true">Присутствует</label></div>
+                <div class="check inventoryCheck noneDisplay"><input type="radio" name="trueOrFalse" id="false"><label for="false">Отсутствует</label></div>
+            </div>
+        </div>
+    </aside>
+    <div class="main">
+        <div class="net">
+            {% for page in all_cards %}
+                <div class="page">
+                    {% for row in page %}
+                        <div class="row">
+                            {% for card in row %}
+                                <div class="card">
+                                    <h1>{{ card.title }}</h1> 
+                                    <h2>{{ card.age }}</h2>
+                                    {% if len(card.description) > 750 %}
+                                        <p>{{ card.description[0:747] + "..." }}</p>
+                                    {% else %}
+                                        <p>{{ card.description }}</p>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}    
+                        </div>
+                    {% endfor %}    
+                </div>
+            {% endfor %}
+        </div>
+        <div class="slider">
+            <img src="../../static/img/educ/accArrowPage.png" alt="" style="rotate: 180deg;" class="arrow leftArrow">
+            <input type="number" name="" id="numberOfPage" value="1" class="numberOfPage">
+            <img src="../../static/img/educ/accArrowPage.png" alt="" class="arrow rightArrow">
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        // Деление на страницы
+        const pages = document.querySelectorAll(".page");
+        const numberOfPageInput = document.querySelector(".numberOfPage");
+        const leftArrow = document.querySelector(".leftArrow");
+        const rightArrow = document.querySelector(".rightArrow");
+
+        for (let i = 0; i < pages.length; i++) {
+            if (i != 0) {
+                pages[i].classList.add("noneDisplay");
+            }
+        }
+
+        leftArrow.addEventListener("click", () => {
+            if (numberOfPageInput.value > 1) {
+                numberOfPageInput.setAttribute("value", numberOfPageInput.value - 1);
+                for (let i = 0; i < pages.length; i++) {
+                    if ((i == numberOfPageInput.value - 1) && (pages[i].classList.contains("noneDisplay"))) {
+                        pages[i].classList.remove("noneDisplay");
+                    } else {
+                        if (pages[i].classList.contains("noneDisplay")) {
+                            continue
+                        }
+                        pages[i].classList.add("noneDisplay");
+                    }
+                }
+            }
+        })
+
+        rightArrow.addEventListener("click", () => {
+            if (numberOfPageInput.value < pages.length) {
+                numberOfPageInput.setAttribute("value", ~~numberOfPageInput.value + 1);
+                console.log(numberOfPageInput.value)
+                for (let i = 0; i < pages.length; i++) {
+                    if ((i == numberOfPageInput.value - 1) && (pages[i].classList.contains("noneDisplay"))) {
+                        pages[i].classList.remove("noneDisplay");
+                    } else {
+                        if (pages[i].classList.contains("noneDisplay")) {
+                            continue
+                        }
+                        pages[i].classList.add("noneDisplay");
+                    }
+                }
+            }
+        })
+
+        // Меню-аккордеоны
+        const view = document.querySelector(".view");
+        const viewCheck = document.querySelectorAll(".viewCheck");
+        const period = document.querySelector(".period");
+        const periodCheck = document.querySelectorAll(".periodCheck");
+        const age = document.querySelector(".age");
+        const ageCheck = document.querySelectorAll(".ageCheck");
+        const inventory = document.querySelector(".inventory");
+        const inventoryCheck = document.querySelectorAll(".inventoryCheck");
+
+        view.addEventListener("click", () => {
+            if (viewCheck[0].classList.contains("noneDisplay")) {
+                for (let i = 0; i < viewCheck.length; i++) {
+                    viewCheck[i].classList.remove("noneDisplay");
+                }
+            } else {
+                for (let i = 0; i < viewCheck.length; i++) {
+                    viewCheck[i].classList.add("noneDisplay");
+                }
+            }
+        })
+
+        period.addEventListener("click", () => {
+            if (periodCheck[0].classList.contains("noneDisplay")) {
+                for (let i = 0; i < periodCheck.length; i++) {
+                    periodCheck[i].classList.remove("noneDisplay");
+                }
+            } else {
+                for (let i = 0; i < periodCheck.length; i++) {
+                    periodCheck[i].classList.add("noneDisplay");
+                }
+            }
+        })
+
+        age.addEventListener("click", () => {
+            if (ageCheck[0].classList.contains("noneDisplay")) {
+                for (let i = 0; i < ageCheck.length; i++) {
+                    ageCheck[i].classList.remove("noneDisplay");
+                }
+            } else {
+                for (let i = 0; i < ageCheck.length; i++) {
+                    ageCheck[i].classList.add("noneDisplay");
+                }
+            }
+        })
+
+        inventory.addEventListener("click", () => {
+            if (inventoryCheck[0].classList.contains("noneDisplay")) {
+                for (let i = 0; i < inventoryCheck.length; i++) {
+                    inventoryCheck[i].classList.remove("noneDisplay");
+                }
+            } else {
+                for (let i = 0; i < inventoryCheck.length; i++) {
+                    inventoryCheck[i].classList.add("noneDisplay");
+                }
+            }
+        })
+    </script>
+{% endblock %}

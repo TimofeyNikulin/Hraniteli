@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="../../static/css/styleEducation.css">
+{% endblock %}
+
+{% block content %}
+    <div class="landing">
+        <div class="firstPart">
+            <div class="title">
+                <h1>Заключительный период</h1>
+            </div>
+            <div class="description">
+                <div class="cap">
+                    <p>
+                        Время подведения итогов и самоанализа ребенка. Детям надо выяснить, чему они научились, что приобрели, что из приобретенного опыта может быть полезно в дальнейшей послелагерной жизни.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="secondPart">
+            <div class="titleOfPart">
+                <h1>Задачи вожатого на период</h1>
+            </div>
+            <div class="table">
+                <div class="card card1 endT">
+                    Групповой анализ и демонстрация индивидуальных и групповых достижений.
+                </div>
+                <div class="card card2 endT">
+                    Оценка и самооценка участниками смены личностно-значимых результатов участия в программе.
+                </div>
+                <div class="card card3 endT">
+                    Создание эмоциональной атмосферы успешного завершения смены.
+                </div>
+                <div class="card card4 endT">
+                    Стимулирование положительных изменений в личности участников смены.
+                </div>
+            </div>
+        </div>
+        <div class="thirdPart">
+            <div class="titleOfPart">
+                <h1>Игры на период</h1>
+            </div>
+            <div class="slider">
+                {% for game in games %}
+                    {% if games.index(game) == 0 %}
+                        <div class="game game{{ games.index(game) + 1 }}">
+                            <h1>{{ game.title }}</h1>
+                            <p>{{ game.description }}</p>
+                            <a href=""><p>Подробнее</p></a>
+                        </div>
+                    {% else %}
+                        <div class="game game{{ games.index(game) + 1 }} noneDisplay">
+                            <h1>{{ game.title }}</h1>
+                            <p>{{ game.description }}</p>
+                            <a href=""><p>Подробнее</p></a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                <img src="../static/img/Arrow.png" alt="" class="arrow arr1">
+            </div>
+        </div>
+        <div class="fourthPart">
+            <div class="titleOfPart">
+                <h1>Советы на период</h1>
+            </div>
+            <div class="tableLowem">
+                <div class="card_2 card2_1">
+                    Проведите трогательное прощание с детьми, поделитесь впечатлениями, пожелайте всего хорошего.
+                </div>
+                <div class="card_2 card2_2">
+                    Сделайте много фотографий и видеозаписей на память.
+                </div>
+                <div class="card_2 card2_3">
+                    Соберите обратную связь от детей о смене.
+                </div>
+                <div class="card_2 card2_4">
+                    Проведите анализ своей работы в качестве вожатого, выделите плюсы и минусы, планируйте работу на будущее.
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        const games = document.querySelectorAll(".game");
+        const arr1 = document.querySelector(".arr1");
+        let index1 = 0;
+        
+        arr1.addEventListener("click", () => {
+            for (let i = 0; i < games.length; i++) {
+                if (!(games[i].classList.contains("noneDisplay"))) {
+                    games[i].classList.add("noneDisplay");
+                    index1 += 1;
+                    if (index1 == games.length) {
+                        index1 = 0;
+                    }
+                }
+            }
+            games[index1].classList.remove("noneDisplay");
+        })
+    </script>
+{% endblock %}

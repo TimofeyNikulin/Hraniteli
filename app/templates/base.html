@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,30 +26,30 @@
             text-decoration: none;">Хранители</a>
             <ul class="navbar">
                 <li style="width: 140px;" class="partOfMenu"><a href="{{ url_for('index') }}">Главная</a></li>
-                <li style="width: 140px;" class="partOfMenu"><a href="{{ url_for('index') }}">Форум</a></li>
-                <li class="list educ" style="width: 252px;">
-                    <a href="{{ url_for('docs') }}" class="educationAll"><p>Обучение</p></a>
+                <li style="width: 140px;" class="partOfMenu"><a href="{{ url_for('forum') }}">Форум</a></li>
+                <li class="list educ">
+                    <a href="{{ url_for('education') }}" class="educationAll"><p>Обучение</p></a>
                     <ul class="submenu">
                         <div class="partOfSubmenu sbmEduc">
                             <li class="partsOfSubmenu">
-                                <a href="{{ url_for('documents') }}"><p class="textOfSubmenu">Теоретический материал</p></a>
+                                <a href="{{ url_for('education') }}"><p class="textOfSubmenu">Теория</p></a>
                             </li>
                             <li class="partsOfSubmenu">
-                                <a href=""><p class="textOfSubmenu">Тестовые материалы</p></a>
+                                <a href=""><p class="textOfSubmenu">Тесты</p></a>
                             </li>
-                            <div style="width: 25px; height: 25px;"></div>
+                            <div style="width: 25px; height: 10px;"></div>
                         </div>
                     </ul>
                 </li>
-                <li class="list docs" style="width: 252px;">
-                    <a href="{{ url_for('docs') }}" class="documentsAll"><p>Документация</p></a>
+                <li class="list docs">
+                    <a href="{{ url_for('docs') }}" class="documentsAll"><p>Документы</p></a>
                     <ul class="submenu">
                         <div class="partOfSubmenu sbmDocs">
                             <li class="partsOfSubmenu">
-                                <a href="{{ url_for('documents') }}"><p class="textOfSubmenu">Нормативно-правовая документация</p></a>
+                                <a href="{{ url_for('documents') }}"><p class="textOfSubmenu">Документы</p></a>
                             </li>
                             <li class="partsOfSubmenu">
-                                <a href="{{ url_for('templates') }}"><p class="textOfSubmenu">Шаблоны для авторских разработок</p></a>
+                                <a href="{{ url_for('templates') }}"><p class="textOfSubmenu">Шаблоны</p></a>
                             </li>
                             <div style="width: 25px; height: 10px;"></div>
                         </div>
@@ -137,6 +137,8 @@
             sbmEduc.classList.remove("partOfSubmenu")
             educationAll.classList.add("forMenu")
             sbmEduc.classList.add("partOfSubmenuHover")
+            educ.classList.remove("educ")
+            educ.classList.add("educHover")
         })
 
         documentsAll.addEventListener("mouseenter", () => {
@@ -145,12 +147,16 @@
             documentsAll.classList.add("forMenu")
             sbmDocs.classList.add("partOfSubmenuHover")
             sbmDocs.classList.add("sbmDocsHover")
+            docs.classList.remove("docs")
+            docs.classList.add("docsHover")
         })
 
         educ.addEventListener("mouseleave", () => {
             sbmEduc.classList.remove("partOfSubmenuHover")
             sbmEduc.classList.add("partOfSubmenu")
             educationAll.classList.remove("forMenu")
+            educ.classList.remove("educHover")
+            educ.classList.add("educ")
         })
 
         docs.addEventListener("mouseleave", () => {
@@ -159,6 +165,8 @@
             sbmDocs.classList.remove("sbmDocsHover")
             sbmDocs.classList.add("sbmDocs")
             documentsAll.classList.remove("forMenu")
+            docs.classList.remove("docsHover")
+            docs.classList.add("docs")
         })
     </script>
 

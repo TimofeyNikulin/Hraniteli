@@ -16,6 +16,8 @@ from .data.messages import Message
 from .controllers import user_controller
 from .controllers import docs_controller
 from .controllers import index_controller
+from .controllers import educ_controller
+from .controllers import forum_controller
 
 
 @socket.on('message')

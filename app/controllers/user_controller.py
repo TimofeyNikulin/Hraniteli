@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, redirect
+from flask import render_template, redirect, make_response
 from ..data import db_session
 from ..forms.reg_form import RegForm
 from ..forms.log_form import LogForm

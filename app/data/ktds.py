@@ -3,8 +3,8 @@ from sqlalchemy import orm
 from .db_session import SqlAlchemyBase
 
 
-class Game(SqlAlchemyBase):
-    __tablename__ = 'games'
+class Ktd(SqlAlchemyBase):
+    __tablename__ = 'ktds'
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
@@ -13,3 +13,4 @@ class Game(SqlAlchemyBase):
     age = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     inventory = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     period = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    

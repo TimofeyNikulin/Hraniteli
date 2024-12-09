@@ -98,3 +98,19 @@ input:focus {
     align-items: center;
     height: 70%;
 }
+
+.poleAddGame {
+    height: 90%;
+}
+
+#description {
+    height: 50px;
+    width: 100%;
+    border-radius: 15px;
+    transition: all 0.5s;
+}
+
+#description:hover {
+    background-color: #CACACA;
+    transition: all 0.5s;
+}

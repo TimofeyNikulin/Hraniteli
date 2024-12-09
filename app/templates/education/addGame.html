@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block head %} 
+    <link rel="stylesheet" href="../static/css/styleForm.css">
+{% endblock %}
+
+{% block content %}
+    <div style="height: 800px; margin-top: 100px;">
+        <form action="" method="post" style="height: 100%;">
+            <div class="pole poleAddGame">
+                <h1 style="color: #FFF;
+                text-align: center;
+                font-family: Arial;
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;">Добавить игру</h1>
+                <div>
+                    {{ form.csrf_token }}
+                </div>
+                {% for field in form if field.name != 'csrf_token' %}
+                    <div class="input">
+                            {{ field.label() }}
+                            {{ field() }}
+                        {% for error in field.errors %}
+                            <div class="error">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                {% endfor %} 
+                <div class="submit">
+                    <input type="submit" value="Добавить игру" id="submit">
+                </div>
+            </div>
+            <div>
+                <p>{{ message }}</p>
+            </div>         
+        </form>   
+    </div>
+{% endblock %}

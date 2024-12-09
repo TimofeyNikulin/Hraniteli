@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="../../static/css/styleEducation.css">
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <a href="{{ url_for('org_period') }}">
+            <div class="orgCard">
+                <div class="mainPartOforgCard">
+                    <h1>
+                        Организационный период
+                    </h1>
+                    <p>
+                        Это короткий по времени и насыщенный по содержанию, начальный этап лагерной смены.
+                    </p>
+                </div>
+            </div>
+        </a>
+        <a href=""><div class="divCandle1 divCandle"><img src="../../static/img/educ/orgcandle.png" alt="" class="backImage"><img src="../../static/img/educ/candle1.png" alt="" class="candle1"></div></a>
+        <a href="{{ url_for('middle_period') }}">
+            <div class="mainCard">
+                <div class="mainPartOfmainCard">
+                    <h1>Основной</h1>
+                    <div class="divCandle2 divCandle"><img src="../../static/img/educ/middlecandle.png" alt="" class="backImage"><img src="../../static/img/educ/candle2.png" alt="" class="candle2"></div>
+                    <h1>период</h1>
+                </div>
+                <p>В этот период наряду с многочисленными отрядными делами, спортивными соревнованиями, походами, занятиями в кружках, проводятся большие общелагерные мероприятия.</p>
+            </div>
+        </a>
+        <a href=""><div class="divCandle1 divCandle"><img src="../../static/img/educ/endcandle.png" alt="" class="backImage"><img src="../../static/img/educ/candle1.png" alt="" class="candle1"></div></a>
+        <a href="{{ url_for('end_period') }}">
+            <div class="endCard">
+                <div class="mainPartOfendCard">
+                    <h1>
+                        Заключительный период
+                    </h1>
+                    <p>
+                        По насыщенности финальные дни можно сравнить с организационным периодом, а по эмоциональному подъему им почти нет равных в смене.
+                    </p>  
+                </div> 
+            </div>
+        </a>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        const candles = document.querySelectorAll(".divCandle");
+        const backImage = document.querySelectorAll(".backImage");
+
+        for (let i = 0; i < candles.length; i++) {
+            candles[i].addEventListener("mouseenter", () => {
+                backImage[i].classList.remove("backImage");
+                backImage[i].classList.add("backImageHover");
+            })
+
+            candles[i].addEventListener("mouseleave", () => {
+                backImage[i].classList.remove("backImageHover");
+                backImage[i].classList.add("backImage");
+            })
+        }
+    </script>
+{% endblock %}

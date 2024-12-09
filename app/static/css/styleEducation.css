@@ -1,0 +1,363 @@
+body {
+    height: 964px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.main {
+    display: flex;
+    margin-top: 320px;
+}
+
+.orgCard {
+    width: 342px;
+    height: 410px;
+    background-color: rgba(25, 0, 175, 0.75);
+    display: flex;
+    border-radius: 15px 0 0 15px;
+    padding-left: 23px;
+}
+
+.mainPartOforgCard > h1 {
+    font-size: 32px;
+    width: 327px;
+    height: 85px;
+    background-color: #3000B7;
+    padding-left: 15px;
+}
+
+.mainPartOforgCard > p {
+    font-size: 28px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 25px;
+}
+
+.mainCard {
+    width: 674px;
+    height: 410px;
+    background-color: rgba(25, 0, 175, 0.75);
+}
+
+.mainPartOfmainCard {
+    display: flex;
+}
+
+.mainPartOfmainCard > h1 {
+    width: 333px;
+    height: 83px;
+    background-color: #3000B7;
+    text-align: center;
+    font-size: 32px;
+}
+
+.mainCard > p {
+    font-size: 28px;
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.endCard {
+    width: 342px;
+    height: 410px;
+    background-color: rgba(25, 0, 175, 0.75);
+    display: flex;
+    border-radius: 0 15px 15px 0;
+    padding-right: 23px;
+}
+
+.mainPartOfendCard > h1 {
+    font-size: 32px;
+    width: 327px;
+    height: 85px;
+    background-color: #3000B7;
+    padding-left: 15px;
+}
+
+.mainPartOfendCard > h1 > a{
+    width: 100%;
+    height: 100%;
+}
+
+.mainPartOfendCard > p {
+    font-size: 28px;
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-right: 15px;
+}
+
+.candle1 {
+    height: 152px;
+    margin-top: -72px;
+}
+
+.divCandle1 {
+    padding-left: 1px;
+    height: 50px;
+    width: 7px;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+    z-index: -1;
+}
+
+.candle2 {
+    /* position: absolute;
+    width: 73px; */
+    height: 185px;
+    margin-top: -72px;
+}
+
+.divCandle2 {
+    height: 83px;
+    width: 7px;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+}
+
+.backImage {
+    cursor: pointer;
+    display: none;
+    opacity: 0.0;
+    transition: all 1s;
+}
+
+.backImageHover {
+    cursor: pointer;
+    display: block;
+    opacity: 1.0;
+    transition: all 1s;
+}
+
+/* .mainPartOfmainCard > a {
+    cursor: default;
+} */
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    height: 3454px;
+    margin-top: 50px;
+}
+
+.firstPart {
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    background-color: #5680E9;
+    font-size: 32px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 15px 70px 15px 70px;
+}
+
+.description {
+    margin-top: 50px;
+    width: 1345px;
+    height: 671px;
+    background-image: url("../img/educ/desriptionBack.png");
+    overflow: hidden;
+}
+
+.cap {
+    background: linear-gradient(90deg, rgba(132, 206, 235, 0.9) 0%, rgba(136, 96, 208, 0.9) 100%);
+    width: 1345px;
+    height: 671px;
+    border-radius: 50px;
+}
+
+.cap > p {
+    font-size: 48px;
+    padding: 45px;
+    text-align: center;
+}
+
+.secondPart {
+    margin-top: 100px;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titleOfPart {
+    max-width: 60%;
+    background-color: #5680E9;
+    font-size: 32px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 15px 50px 15px 50px;
+}
+
+.table {
+    align-self: center;
+    justify-self: center;
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: 600px 600px;
+    grid-template-rows: 400px 400px;
+}
+
+.endT {
+    height: 370px;
+}
+
+.tableLow {
+    align-self: center;
+    justify-self: center;
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: 600px 600px 600px;
+    grid-template-rows: 500px 500px;
+}
+
+.tableLowem {
+    align-self: center;
+    justify-self: center;
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: 600px 600px;
+    grid-template-rows: 500px 500px;
+}
+
+.card1 {
+    background: linear-gradient(-56deg, rgba(134, 3, 3, 0.75) 0%, rgba(25, 0, 175, 0.75) 100%);
+}
+
+.card2 {
+    background: linear-gradient(56deg, rgba(134, 3, 3, 0.75) 0%, rgba(25, 0, 175, 0.75) 100%);
+}
+
+.card3 {
+    background: linear-gradient(-124deg, rgba(134, 3, 3, 0.75) 0%, rgba(25, 0, 175, 0.75) 100%);
+}
+
+.card4 {
+    background: linear-gradient(124deg, rgba(134, 3, 3, 0.75) 0%, rgba(25, 0, 175, 0.75) 100%);
+}
+
+.card {
+    width: 470px;
+    height: 320px;
+    border-radius: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.thirdPart {
+    margin-top: 150px;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slider {
+    margin-top: 50px;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+}
+
+.game {
+    width: 400px;
+    height: 550px;
+    background-color: #780505;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.6);
+}
+
+.game > a > p {
+    padding: 10px 10px 0 10px;
+    text-align: center;
+    width: 125px;
+    height: 25px;
+    background-color: #d9d9d9;
+    color: black;
+    border-radius: 15px;
+}
+
+.game > p {
+    height: 60%;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.noneDisplay {
+    display: none;
+}
+
+.arrow {
+    width: 87px;
+    height: 74px;
+    rotate: 180deg;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 225px;
+    transition: all 0.5s;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.205);
+    margin-left: 10px;
+    transition: all 0.5s;
+}
+
+.fourthPart {
+    margin-top: 100px;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card_2 {
+    background-color: white;
+    width: 530px;
+    height: 420px;
+    border-radius: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    color: black;
+}
+
+.educCard {
+    height: 370px;
+}
+

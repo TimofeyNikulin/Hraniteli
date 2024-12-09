@@ -191,7 +191,7 @@ aside h1, aside p, aside h3 {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: rgb(3, 52, 175);
+    background-color: rgba(3, 52, 175, 0.5);
     height: 320px;
     width: 226px;
     z-index: -1;
@@ -204,7 +204,7 @@ aside h1, aside p, aside h3 {
     z-index: 1;
     bottom: 250px;
     position: relative;
-    background-color: rgb(3, 52, 175);
+    background-color: rgba(3, 52, 175, 0.85);
     height: 320px;
     width: 226px;
     transition: all 1s;

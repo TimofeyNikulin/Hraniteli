@@ -69,6 +69,27 @@ li {
     z-index: 1;
 }
 
+.educ, .docs {
+    margin-right: 25px;
+    border-radius: 25px 25px 0 0;
+}
+
+.educ, .docs {
+    box-shadow: inset -140px 0px 70px -70px #84ceeb00;
+    background-color: #8760d000;
+    width: 140px;
+    transition: all 1s;
+    border-radius: 25px 25px 0 0;
+}
+
+.educHover, .docsHover {
+    box-shadow: inset 0px 0px 70px -70px #84CEEB;
+    background-color: #8860D0;
+    width: 252px;
+    margin-right: 15px;
+    transition: all 1s;
+}
+
 .documentsAll {
     border-radius: 25px 25px 0 0;
     display: flex;
