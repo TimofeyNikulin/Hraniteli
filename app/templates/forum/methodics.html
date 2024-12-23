@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="../../static/css/styleForum.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
+{% endblock %}
+
+{% block content %}
+    <div class="mainMethod">
+        <div class="method">
+            <div class="head">
+                <h1>{{ method.title }}</h1>
+                <h2>{{ method.type }}</h2>
+                <h2>{{ method.period }}</h2>
+                <h2>{{ method.age }}</h2>
+                <h2>{{ method.inventory }}</h2>
+            </div>
+            <p>{{ method.description }}</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    
+{% endblock %}

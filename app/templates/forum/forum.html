@@ -33,21 +33,26 @@
             </div>
         </div>
     </aside>
-    <div class="main">
-        <div class="net">
+    <div class="main" style="text-decoration: none;">
+        <div class="net" style="text-decoration: none;">
             {% for page in all_cards %}
-                <div class="page">
+                <div class="page" style="text-decoration: none;">
                     {% for row in page %}
-                        <div class="row">
+                        <div class="row" style="text-decoration: none;">
                             {% for card in row %}
-                                <div class="card">
-                                    <h1>{{ card.title }}</h1> 
-                                    <h2>{{ card.age }}</h2>
-                                    {% if len(card.description) > 750 %}
-                                        <p>{{ card.description[0:747] + "..." }}</p>
-                                    {% else %}
-                                        <p>{{ card.description }}</p>
-                                    {% endif %}
+                                <div class="underRow" style="text-decoration: none;">
+                                    <a href="forum/methodics/{{ card.id }}" style="text-decoration: none;">
+                                        <div class="card" style="text-decoration: none;">
+                                            <h1 style="text-decoration: none;">{{ card.title }}</h1> 
+                                            <h2 style="text-decoration: none;">{{ card.type_of_methodic }}</h2>
+                                            <h2 style="text-decoration: none;">{{ card.age }}</h2>
+                                            {% if len(card.description) > 550 %}
+                                                <p style="text-decoration: none;">{{ card.description[0:547] + "..." }}</p>
+                                            {% else %}
+                                                <p style="text-decoration: none;">{{ card.description }}</p>
+                                            {% endif %} 
+                                        </div>
+                                    </a>
                                 </div>
                             {% endfor %}    
                         </div>
@@ -109,6 +114,8 @@
                 }
             }
         })
+
+        // Сортировка
 
         // Меню-аккордеоны
         const view = document.querySelector(".view");

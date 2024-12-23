@@ -1,6 +1,5 @@
 from app import app, db_session
 from flask import render_template, redirect
-from ..data.games import Game
 from requests import get
 
 
@@ -20,13 +19,6 @@ def docs():
 @app.route('/docs/documents')
 def documents():
     return render_template("docs/documents.html", title="Основные документы", get=get)
-
-
-@app.route('/docs/games_and_methodics')
-def games_and_methodics():
-    db_sess = db_session.create_session()
-    games = db_sess.query(Game).all()
-    return render_template("docs/games_and_methodics.html", title="Игры и методики диагностики ребенка", games=games, get=get)
 
 
 @app.route('/docs/candle')

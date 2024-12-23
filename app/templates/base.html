@@ -27,6 +27,7 @@
             <ul class="navbar">
                 <li style="width: 140px;" class="partOfMenu"><a href="{{ url_for('index') }}">Главная</a></li>
                 <li style="width: 140px;" class="partOfMenu"><a href="{{ url_for('forum') }}">Форум</a></li>
+                <!-- <li style="width: 140px;" class="partOfMenu"><a href="{{ url_for('education') }}">Обучение</a></li> -->
                 <li class="list educ">
                     <a href="{{ url_for('education') }}" class="educationAll"><p>Обучение</p></a>
                     <ul class="submenu">
@@ -34,10 +35,10 @@
                             <li class="partsOfSubmenu">
                                 <a href="{{ url_for('education') }}"><p class="textOfSubmenu">Теория</p></a>
                             </li>
-                            <li class="partsOfSubmenu">
+                            <!-- <li class="partsOfSubmenu">
                                 <a href=""><p class="textOfSubmenu">Тесты</p></a>
-                            </li>
-                            <div style="width: 25px; height: 10px;"></div>
+                            </li> -->
+                            <div style="width: 25px; height: 5px;"></div>
                         </div>
                     </ul>
                 </li>
@@ -55,7 +56,7 @@
                         </div>
                     </ul>
                 </li>
-                <li style="width: 128px;" class="partOfMenu enter"><a href="{{ url_for('login') }}">Войти</a></li>
+                <!-- <li style="width: 128px;" class="partOfMenu enter"><a href="{{ url_for('login') }}">Войти</a></li> -->
                 <!-- {% if current_user.is_authenticated %}
                     <li><a href="{{ url_for('logout') }}">{{ current_user.name }}</a></li>
                 {% else %} -->

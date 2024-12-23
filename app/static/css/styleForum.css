@@ -1,6 +1,7 @@
 main {
     display: flex;
     width: 100%;
+    text-decoration: none;
 }
 
 aside {
@@ -84,8 +85,19 @@ aside {
     justify-content: space-around;
 }
 
-.card {
+.underRow {
     width: 35%;
+    height: 100%;
+}
+
+.row > a {
+    width: 100%;
+    text-decoration: none;
+}
+
+.card {
+    width: 100%;
+    height: 250px;
     border-radius: 25px;
     padding: 25px;
     background: rgba(147, 96, 255, 0.6);
@@ -110,4 +122,27 @@ aside {
 
 .arrow {
     cursor: pointer;
+}
+
+.method {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    background-color: #780505;
+    padding: 25px;
+    border-radius: 25px;
+    color: white;
+    margin-top: 200px;
+}
+
+.mainMethod {
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+}
+
+.head {
+    margin-bottom: 25px;
 }
